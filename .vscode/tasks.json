@@ -1,0 +1,64 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "webdev serve -v",
+      "type": "shell",
+      "command": "webdev",
+      "args": ["serve", "--verbose"],
+      "group": "build",
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "custom",
+        "pattern": {
+          "regexp": "__________"
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "^\\[INFO\\] Watch:Setting up",
+          "endsPattern": "^\\[INFO\\] Build:Succeeded"
+        }
+      }
+    },
+    {
+      "label": "webdev serve",
+      "type": "shell",
+      "command": "webdev",
+      "args": ["serve"],
+      "group": "build",
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "custom",
+        "pattern": {
+          "regexp": "__________"
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "^\\[INFO\\] Starting Build",
+          "endsPattern": "^\\[INFO\\] Succeeded after"
+        }
+      }
+    },
+    {
+      "label": "webdev build",
+      "type": "shell",
+      "command": "webdev",
+      "args": ["build"],
+      "group": "build",
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "custom",
+        "pattern": {
+          "regexp": "__________"
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "^\\[INFO\\] Running build",
+          "endsPattern": "^\\[INFO\\] Succeeded after"
+        }
+      }
+    }
+  ]
+}
