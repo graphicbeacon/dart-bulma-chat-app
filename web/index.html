@@ -1,20 +1,57 @@
 <!DOCTYPE html>
 
 <html>
+
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="scaffolded-by" content="https://github.com/google/stagehand">
-    <title>chat_app</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="favicon.ico">
-    <script defer src="main.dart.js"></script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="scaffolded-by" content="https://github.com/google/stagehand">
+  <title>chat_app</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" integrity="sha256-zIG416V1ynj3Wgju/scU80KAEWOsO5rRLfVyRDuOv7Q="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="styles.css">
+
+  <link rel="icon" href="favicon.ico">
+
+  <script defer src="main.dart.js"></script>
 </head>
 
 <body>
 
-  <div id="output"></div>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">Dart Chatter 🎯</h1>
+
+      <div id="ChatLogin">
+        <div class="columns">
+          <div class="column is-6">
+            <div class="field">
+              <label class="label">Please enter your name</label>
+              <div class="control is-expanded has-icons-left">
+                <input class="input is-medium" type="text" placeholder="Enter your name and hit ENTER" />
+                <span class="icon is-medium is-left">
+                  <i class="fas fa-user"></i>
+                </span>
+              </div>
+              <p class="help is-danger"></p>
+            </div>
+            <div class="field">
+              <div class="control">
+                <button class="button is-medium is-primary">
+                  Join chat
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
 </body>
+
 </html>
