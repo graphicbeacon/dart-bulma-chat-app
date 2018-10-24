@@ -1,12 +1,14 @@
 import 'dart:html';
 
 void main() {
-  // Chat login
-  DivElement chatLoginBox = querySelector('#ChatLogin');
+  /// Selectors
+  var chatLoginBox = querySelector('#ChatLogin');
+  var chatRoomBox = querySelector('#ChatRoom');
+  var validationBox = chatLoginBox.querySelector('p.help');
   InputElement nameField = chatLoginBox.querySelector('input[type="text"]');
   ButtonElement submitBtn = chatLoginBox.querySelector('button');
-  var validationBox = chatLoginBox.querySelector('p.help');
 
+  /// Event listeners
   nameField.addEventListener('input', (evt) {
     if (nameField.value.trim().isNotEmpty) {
       nameField.classes
@@ -37,8 +39,9 @@ void main() {
         },
       );
 
-      // TODO: Handle success response and switch view
-      window.console.dir(response);
+      // Handle success response and switch view
+      chatLoginBox.hidden = true;
+      chatRoomBox.hidden = false;
     } catch (e) {
       // Handle failure response
       submitBtn
