@@ -2,11 +2,11 @@ import 'dart:html';
 
 void main() {
   /// Selectors
-  var chatLoginBox = querySelector('#ChatLogin');
+  var chatSigninBox = querySelector('#ChatSignin');
   var chatRoomBox = querySelector('#ChatRoom');
-  var validationBox = chatLoginBox.querySelector('p.help');
-  InputElement nameField = chatLoginBox.querySelector('input[type="text"]');
-  ButtonElement submitBtn = chatLoginBox.querySelector('button');
+  var validationBox = chatSigninBox.querySelector('p.help');
+  InputElement nameField = chatSigninBox.querySelector('input[type="text"]');
+  ButtonElement submitBtn = chatSigninBox.querySelector('button');
 
   /// Event listeners
   nameField.addEventListener('input', (evt) {
@@ -16,7 +16,9 @@ void main() {
         ..add('is-success');
       validationBox.text = '';
     } else {
-      nameField.classes.removeWhere((className) => className == 'is-success');
+      nameField.classes
+        ..removeWhere((className) => className == 'is-success')
+        ..add('is-danger');
     }
   });
 
@@ -40,7 +42,7 @@ void main() {
       );
 
       // Handle success response and switch view
-      chatLoginBox.hidden = true;
+      chatSigninBox.hidden = true;
       chatRoomBox.hidden = false;
     } catch (e) {
       // Handle failure response
