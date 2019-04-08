@@ -1,10 +1,10 @@
 import 'dart:html';
-import 'dart:convert';
 
 import 'package:dart_bulma_chat_app/src/helpers.dart';
 
 class ChatRoomSubject {
-  ChatRoomSubject(String url) : socket = WebSocket(url) {
+  ChatRoomSubject(String username)
+      : socket = WebSocket('ws://localhost:9780/ws?username=$username') {
     _initListeners();
   }
 

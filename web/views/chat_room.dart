@@ -13,8 +13,7 @@ import '../router.dart';
 class ChatRoomView implements View {
   ChatRoomView(this.params)
       : _contents = DocumentFragment(),
-        _subject = ChatRoomSubject(
-            'ws://localhost:9780/ws?username=${params['username']}') {
+        _subject = ChatRoomSubject(params['username']) {
     onEnter();
   }
 
@@ -126,7 +125,11 @@ class ChatRoomView implements View {
       params['username'],
       messageField.value,
     ));
-    messageField.value = '';
+
+    // Empty and re-focus on message box
+    messageField
+      ..value = ''
+      ..focus();
   }
 
   void _leaveBtnClickHandler(e) {
